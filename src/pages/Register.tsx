@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import emailjs from "emailjs-com";
 
 interface FormData {
   fullName: string;
@@ -15,6 +16,12 @@ const Register = () => {
   const [form, setForm] = useState<FormData>(initialForm);
   const [errors, setErrors] = useState<Partial<FormData>>({});
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+
+  useEffect(() => {
+    emailjs.init("WZarobATiaJQ8-7pa");
+  }, []);
 
   const validate = (): boolean => {
     const e: Partial<FormData> = {};
@@ -28,11 +35,35 @@ const Register = () => {
     return Object.keys(e).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (validate()) {
-      setSubmitted(true);
-      setForm(initialForm);
+      setLoading(true);
+      setSubmitError("");
+
+      try {
+        await emailjs.send(
+          "service_zrqrd6n",
+          "template_rr59uu9",
+          {
+            full_name: form.fullName,
+            standard: form.standard,
+            parent_name: form.parentName,
+            phone: form.phone,
+            email: form.email,
+            address: form.address,
+            to_email: "info@effortsacademy.com",
+          }
+        );
+
+        setSubmitted(true);
+        setForm(initialForm);
+      } catch (error) {
+        console.error("Error sending registration email:", error);
+        setSubmitError("Failed to submit registration. Please try again later.");
+      } finally {
+        setLoading(false);
+      }
     }
   };
 
@@ -61,6 +92,7 @@ const Register = () => {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-5">
+              {submitError && <div className="rounded-xl border border-red-200 bg-red-50 p-3 text-sm text-red-600">{submitError}</div>}
               <div>
                 <label className="mb-1.5 block text-sm font-medium text-foreground">Full Name</label>
                 <input className={inputClass("fullName")} value={form.fullName} onChange={(e) => setForm({ ...form, fullName: e.target.value })} placeholder="Enter student's full name" />
@@ -98,8 +130,8 @@ const Register = () => {
                 <textarea className={`${inputClass("address")} min-h-[100px] resize-none`} value={form.address} onChange={(e) => setForm({ ...form, address: e.target.value })} placeholder="Enter full address"></textarea>
                 {errors.address && <p className="mt-1 text-xs text-destructive">{errors.address}</p>}
               </div>
-              <button type="submit" className="w-full rounded-xl bg-primary py-3.5 font-heading font-semibold text-primary-foreground transition-all hover:scale-[1.02] hover:shadow-lg">
-                Submit Registration
+              <button type="submit" disabled={loading} className="w-full rounded-xl bg-primary py-3.5 font-heading font-semibold text-primary-foreground transition-all hover:scale-[1.02] hover:shadow-lg disabled:cursor-not-allowed disabled:opacity-50">
+                {loading ? "Submitting..." : "Submit Registration"}
               </button>
             </form>
           )}
