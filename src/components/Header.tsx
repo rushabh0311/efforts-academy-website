@@ -31,10 +31,17 @@ const navLinks = [
 ];
 
 const socialLinks = [
+<<<<<<< HEAD
   { icon: "fab fa-whatsapp", href: "https://wa.me/919823618142", label: "WhatsApp" },
   { icon: "fab fa-facebook-f", href: "https://www.facebook.com/share/19QKU9sfkQ/", label: "Facebook" },
   { icon: "fab fa-youtube", href: "https://youtube.com", label: "YouTube" },
   { icon: "fab fa-linkedin-in", href: "https://www.linkedin.com/in/dr-milind-r-kothavade-85071b161?utm_source=share_via&utm_content=profile&utm_medium=member_android", label: "LinkedIn" },
+=======
+  { icon: "fab fa-whatsapp", href: "https://wa.me/917000000000", label: "WhatsApp" },
+  { icon: "fab fa-facebook-f", href: "https://facebook.com", label: "Facebook" },
+  { icon: "fab fa-youtube", href: "https://youtube.com", label: "YouTube" },
+  { icon: "fab fa-linkedin-in", href: "https://linkedin.com", label: "LinkedIn" },
+>>>>>>> 140539846852a624afa49c224564faebe1419ed4
 ];
 
 export const SocialIcons = ({ className = "" }: { className?: string }) => (

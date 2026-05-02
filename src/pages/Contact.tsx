@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useState } from "react";
 
 const Contact = () => {
@@ -6,6 +7,64 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSent(true);
+=======
+import { useState, useEffect } from "react";
+import emailjs from "emailjs-com";
+
+const Contact = () => {
+  const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  // Initialize EmailJS (replace with your Public Key)
+  useEffect(() => {
+    emailjs.init("WZarobATiaJQ8-7pa");
+  }, []);
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setError("");
+
+    try {
+      await emailjs.send(
+        "service_zrqrd6n", // Replace with your Service ID
+        "template_i09zsfq", // Replace with your Template ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          to_email: "Milindkothavade71@gmail.com", // Recipient email
+        }
+      );
+
+      // Reset form and show success message
+      setSent(true);
+      setFormData({ name: "", email: "", subject: "", message: "" });
+      setLoading(false);
+    } catch (err) {
+      console.error("Error sending email:", err);
+      setError("Failed to send message. Please try again later.");
+      setLoading(false);
+    }
+>>>>>>> 140539846852a624afa49c224564faebe1419ed4
   };
 
   return (
@@ -58,12 +117,60 @@ const Contact = () => {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
                 <h3 className="font-heading text-xl font-bold text-foreground">Send Us a Message</h3>
+<<<<<<< HEAD
                 <input required className="w-full rounded-xl border bg-background px-4 py-3 outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/20" placeholder="Your Name" />
                 <input required type="email" className="w-full rounded-xl border bg-background px-4 py-3 outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/20" placeholder="Your Email" />
                 <input className="w-full rounded-xl border bg-background px-4 py-3 outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/20" placeholder="Subject" />
                 <textarea required className="w-full rounded-xl border bg-background px-4 py-3 outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/20 min-h-[120px] resize-none" placeholder="Your Message"></textarea>
                 <button type="submit" className="w-full rounded-xl bg-primary py-3.5 font-heading font-semibold text-primary-foreground transition-all hover:scale-[1.02] hover:shadow-lg">
                   Send Message
+=======
+                {error && (
+                  <div className="rounded-xl border border-red-200 bg-red-50 p-3 text-sm text-red-600">
+                    {error}
+                  </div>
+                )}
+                <input
+                  required
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  className="w-full rounded-xl border bg-background px-4 py-3 outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/20"
+                  placeholder="Your Name"
+                />
+                <input
+                  required
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="w-full rounded-xl border bg-background px-4 py-3 outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/20"
+                  placeholder="Your Email"
+                />
+                <input
+                  type="text"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  className="w-full rounded-xl border bg-background px-4 py-3 outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/20"
+                  placeholder="Subject"
+                />
+                <textarea
+                  required
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  className="w-full rounded-xl border bg-background px-4 py-3 outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/20 min-h-[120px] resize-none"
+                  placeholder="Your Message"
+                ></textarea>
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="w-full rounded-xl bg-primary py-3.5 font-heading font-semibold text-primary-foreground transition-all hover:scale-[1.02] hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {loading ? "Sending..." : "Send Message"}
+>>>>>>> 140539846852a624afa49c224564faebe1419ed4
                 </button>
               </form>
             )}

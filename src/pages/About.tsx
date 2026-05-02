@@ -17,8 +17,13 @@ const About = () => (
             and develop critical thinking skills that last a lifetime.
           </p>
           <p className="mt-4 leading-relaxed text-muted-foreground">
+<<<<<<< HEAD
             Our experienced faculty members use innovative teaching methods to make learning engaging, interactive 
             and effective. We believe every child has the potential to excel and we provide the right environment 
+=======
+            Our experienced faculty members use innovative teaching methods to make learning engaging, interactive, 
+            and effective. We believe every child has the potential to excel, and we provide the right environment 
+>>>>>>> 140539846852a624afa49c224564faebe1419ed4
             and guidance to unlock that potential.
           </p>
         </div>
@@ -77,7 +82,11 @@ const About = () => (
             {[
               { icon: "fas fa-lightbulb", title: "Conceptual Learning", desc: "Focus on understanding concepts rather than rote memorization." },
               { icon: "fas fa-chart-line", title: "Progress Tracking", desc: "Regular assessments and parent-teacher meetings for continuous feedback." },
+<<<<<<< HEAD
               { icon: "fas fa-puzzle-piece", title: "Interactive Methods", desc: "Engaging activities, group discussions and practical demonstrations." },
+=======
+              { icon: "fas fa-puzzle-piece", title: "Interactive Methods", desc: "Engaging activities, group discussions, and practical demonstrations." },
+>>>>>>> 140539846852a624afa49c224564faebe1419ed4
               { icon: "fas fa-heart", title: "Student-Centric", desc: "Individual attention to address unique learning needs of every student." },
             ].map((item) => (
               <div key={item.title} className="flex gap-4 rounded-xl border bg-card p-4 transition-all duration-200 hover:card-shadow">

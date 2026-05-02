@@ -1,7 +1,11 @@
 const services = [
   {
     title: "1st – 4th Standard Coaching",
+<<<<<<< HEAD
     desc: "Building a strong foundation in Mathematics, English, Science and Languages through activity-based learning and interactive sessions.",
+=======
+    desc: "Building a strong foundation in Mathematics, English, Science, and Languages through activity-based learning and interactive sessions.",
+>>>>>>> 140539846852a624afa49c224564faebe1419ed4
     icon: "fas fa-seedling",
     features: ["Activity-based learning", "Phonics & reading skills", "Basic math concepts", "Creative worksheets"],
   },
@@ -15,7 +19,11 @@ const services = [
     title: "8th – 10th Standard Coaching",
     desc: "Intensive board exam preparation with regular mock tests, revision sessions, and one-on-one doubt clearing.",
     icon: "fas fa-graduation-cap",
+<<<<<<< HEAD
     features: ["Board exam preparation", "Mock test series", " Analysis of previous year's question papers", "Career guidance"],
+=======
+    features: ["Board exam preparation", "Mock test series", "Previous year analysis", "Career guidance"],
+>>>>>>> 140539846852a624afa49c224564faebe1419ed4
   },
   {
     title: "Doubt Solving Sessions",
@@ -27,7 +35,11 @@ const services = [
     title: "Weekly Test Series",
     desc: "Regular assessments to track progress, identify weak areas, and build exam confidence through practice.",
     icon: "fas fa-clipboard-check",
+<<<<<<< HEAD
     features: ["Chapter-wise tests", "Performance analysis", "Rank system", " Reports and feedback to parents"],
+=======
+    features: ["Chapter-wise tests", "Performance analysis", "Rank system", "Parent reports"],
+>>>>>>> 140539846852a624afa49c224564faebe1419ed4
   },
 ];
 

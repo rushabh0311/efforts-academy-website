@@ -11,7 +11,11 @@ const Gallery = () => (
   <div>
     <section className="hero-gradient px-4 py-20 text-center text-primary-foreground">
       <h1 className="font-heading text-4xl font-extrabold md:text-5xl">Gallery</h1>
+<<<<<<< HEAD
       <p className="mt-3 text-primary-foreground/70">A glimpse into the life at Efforts Academy</p>
+=======
+      <p className="mt-3 text-primary-foreground/70">A glimpse into life at Efforts Academy</p>
+>>>>>>> 140539846852a624afa49c224564faebe1419ed4
     </section>
 
     <section className="section-padding bg-background">
