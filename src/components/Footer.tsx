@@ -49,17 +49,10 @@ const Footer = () => (
           <h4 className="font-heading text-lg font-semibold mb-4">Connect With Us</h4>
           <SocialIcons />
           <p className="mt-4 text-sm text-primary-foreground/60">
-<<<<<<< HEAD
             <i className="fas fa-phone mr-2"></i>+91 9823618142
           </p>
           <p className="mt-2 text-sm text-primary-foreground/60">
             <i className="fas fa-envelope mr-2"></i>milindkothavade71@gmail.com
-=======
-            <i className="fas fa-phone mr-2"></i>+91 70000 00000
-          </p>
-          <p className="mt-2 text-sm text-primary-foreground/60">
-            <i className="fas fa-envelope mr-2"></i>info@effortsacademy.com
->>>>>>> 140539846852a624afa49c224564faebe1419ed4
           </p>
         </div>
       </div>

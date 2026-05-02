@@ -1,21 +1,13 @@
 import { Link } from "react-router-dom";
 
 const courses = [
-<<<<<<< HEAD
   { title: "1st – 4th Standard", desc: "Strong foundation in core subjects with activity based learning methods.", icon: "fas fa-seedling" },
-=======
-  { title: "1st – 4th Standard", desc: "Strong foundation in core subjects with fun learning methods.", icon: "fas fa-seedling" },
->>>>>>> 140539846852a624afa49c224564faebe1419ed4
   { title: "5th – 7th Standard", desc: "Concept-driven teaching to prepare for higher studies.", icon: "fas fa-book-open" },
   { title: "8th – 10th Standard", desc: "Board exam preparation with practice tests and mentoring.", icon: "fas fa-graduation-cap" },
 ];
 
 const whyUs = [
-<<<<<<< HEAD
   { title: "Expert Faculty", desc: "Highly qualified and experienced teachers dedicated to academic improvement of students leading to greater success.", icon: "fas fa-chalkboard-teacher" },
-=======
-  { title: "Expert Faculty", desc: "Highly qualified and experienced teachers dedicated to student success.", icon: "fas fa-chalkboard-teacher" },
->>>>>>> 140539846852a624afa49c224564faebe1419ed4
   { title: "Small Batches", desc: "Personal attention with limited students per batch.", icon: "fas fa-users" },
   { title: "Regular Tests", desc: "Weekly tests and progress tracking for continuous improvement.", icon: "fas fa-clipboard-check" },
   { title: "Affordable Fees", desc: "Quality education accessible to all with flexible payment options.", icon: "fas fa-hand-holding-heart" },
