@@ -80,14 +80,14 @@ const Contact = () => {
                 {
                   icon: "fas fa-phone",
                   title: "Phone",
-                  text: "+91 70000 00000",
-                  href: "tel:+917000000000",
+                  text: "+91 98236 18142",
+                  href: "tel:+919823618142",
                 },
                 {
                   icon: "fas fa-envelope",
                   title: "Email",
-                  text: "info@effortsacademy.com",
-                  href: "mailto:info@effortsacademy.com",
+                  text: "milindkothavade71@gmail.com",
+                  href: "mailto:milindkothavade71@gmail.com",
                 },
                 {
                   icon: "fas fa-map-marker-alt",
